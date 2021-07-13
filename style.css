@@ -29,10 +29,6 @@ nav {
   margin: 0 auto;
   max-width: 1400px;
 }
-nav a img {
-    width: 80px;
-    cursor: pointer;
-}
 .logo-container{
     display: flex;
     align-items: center;
@@ -41,7 +37,6 @@ nav a img {
 }
 .logo-container h1{
   display: inline-block;
-  margin-left: 18px;
   letter-spacing: 6px;
   font-size: 3rem;
 }
@@ -134,8 +129,12 @@ nav a img {
     overflow: hidden;
     border-radius: 50%;
   }
-#teamSection > h2 {
+#teamSection > h2,#teamSection p {
   text-align: center;
+}
+#teamSection p {
+    max-width: 1000px;
+    margin: 10px auto;
 }
 #team {
     display: flex;
@@ -174,6 +173,10 @@ nav a img {
     font-size: 1.2rem;
     line-height: 1.8;
 } 
+#contactSection span {
+    display: inline-block;
+    margin-left:87px;
+}
 .readSection p{
     font-size: 1.8rem;
 }
