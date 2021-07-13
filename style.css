@@ -1,0 +1,228 @@
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Nunito Sans', sans-serif;
+    color:#424242;
+    min-width:270px;
+    min-height:100%;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: 0.525rem;
+    background:#ffffff;
+
+}
+::-webkit-scrollbar-thumb{
+    border-radius:20px;
+    background:#cccccc;
+}
+/* styling the navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+nav a img {
+    width: 80px;
+    cursor: pointer;
+}
+#menuIcon{
+    width: 35px;
+    cursor: pointer;
+}
+#navbar-items{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+#navbar-items li {
+  display: inline-block;
+  margin:0 20px;
+}
+#navbar-items a {
+    font-size: 20px;
+    color: #424242;
+    text-decoration: none;
+}
+
+#navbar-items li::after
+{
+    content:'';
+    display: block;
+    width:100%;
+    height:0.25rem;
+    margin-top:0.15rem;
+    border-radius:0.1875rem;
+    background:#424242;
+    transform: scaleX(0);
+    transition: 0.17s;
+}
+#navbar-items li:hover a{
+    transition: 0.17s;
+}
+#navbar-items li:hover:after{
+    transform: scaleX(1);
+}
+#menuIcon {
+    display: none;
+}
+.navbar-mobile-items {
+    display: none;
+    margin: 0;
+    list-style: none
+}
+.navbar-mobile-items li {
+    padding: 10px;
+}
+.navbar-mobile-items a {
+    text-decoration: none;
+    color: #424242;
+    font-size: 1.3rem;
+    transition: 0.2s;
+}
+.navbar-mobile-items a:hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
+/* styling the intro and about section */
+#introSection,#aboutSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 20px 150px 20px;
+    max-width:1500px;
+    margin: 0 auto;
+  }
+
+.readSection {
+    max-width: 700px;
+}
+.readSection h1 {
+    font-size: 2.7rem;
+}
+
+/* styling the team and contact section */
+.imgParent img {
+    width: 450px;
+}
+
+#teamSection-Mainimage {
+    position: relative;
+    margin: 50px auto;
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+#team {
+    display: flex;
+    margin: 100px 0 0 0;
+    justify-content: space-around
+}
+.teamMember {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.teamMember p{
+    margin: 0;
+    color:#666
+}
+.teamMember h2{
+    margin:1.2rem 0 0.5rem 0;
+}
+.teamMember-image{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+#teamSection-Mainimage img,.teamMember-image img{
+    width: 100%;
+    height: auto;
+  }
+#teamSection,#contactSection {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#teamSection p,.readSection p,#contactSection p,#copyrightSection p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+} 
+#copyrightSection{
+  padding:10px 0;
+  text-align: center;
+}
+.section-heading {
+    font-size: 2rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+/* code for responsiveness */
+@media screen and (max-width:900px) {
+    #team {
+        flex-direction: column;
+    }
+    #introSection,#aboutSection {
+        flex-direction: column;
+    }
+    .teamMember {
+        margin-top:80px;
+    }
+}
+
+/* animation code */
+.faders.appear{
+    animation:upwardscroll 700ms linear forwards;
+}
+@keyframes upwardscroll{
+    0%{opacity: 0;transform:translateY(0px);}
+    50%{opacity: 0.5;transform: translateY(-20px);}
+    100%{opacity: 1;transform: translateY(0px);}
+ }
+.from-left{
+    opacity: 0;
+    transform:translateX(-100%);
+    transition:600ms linear;
+}
+.from-right{
+    opacity: 0;
+    transform: translateX(100%);
+    transition:600ms linear;
+}
+.from-left.slide,.from-right.slide{
+    opacity:1;
+    transform: translateX(0);
+}
+@media screen and (max-width:500px){
+    .imgParent img {
+        width: 300px;
+    }
+    .navbar-mobile-items {
+        height: 0;
+        overflow: hidden;
+        display: block;
+        transition: 0.3s;
+    }
+    #navbar-items {
+        display: none;
+    }
+    .navbar-mobile-items-clicked {
+        height: 148px;
+    }
+    #menuIcon {
+    display: block;
+    }
+}
