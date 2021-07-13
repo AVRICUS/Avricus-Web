@@ -177,8 +177,31 @@ nav {
     display: inline-block;
     margin-left:87px;
 }
+#contact-subsection,#contact-founders {
+    display: flex;
+    justify-content: space-between;
+}
 .readSection p{
     font-size: 1.8rem;
+}
+#contact-subsection div {
+    margin-top: 30px;
+}
+#contact-subsection h2 {
+    text-align: center;
+}
+#contact-founders {
+   width: 300px;
+}
+#contact-founders div {
+    margin: 20px 0 0 0;
+}
+#contact-founders img{
+    width: 50px;
+    transition: 0.5s;
+}
+#contact-founders img:hover{
+    transform: rotate(360deg);
 }
 #copyrightSection{
   padding:10px 0;
@@ -200,6 +223,10 @@ nav {
     }
     .teamMember {
         margin-top:80px;
+    }
+    #contact-subsection {
+        flex-direction:column;
+        align-items: center;
     }
 }
 
