@@ -1,118 +1,245 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./assets/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" href="./assets/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" href="./assets/favicon-96x96.png" sizes="96x96">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-    <!-- tags for seo -->
-    <meta name="description" content="Avricus is bringing access to collaborative education for students.">
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Nunito Sans', sans-serif;
+    color:#424242;
+    min-width:270px;
+    min-height:100%;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: 0.525rem;
+    background:#ffffff;
 
-    <title>Avricus</title>
-</head>
-<body>
+}
+::-webkit-scrollbar-thumb{
+    border-radius:20px;
+    background:#cccccc;
+}
+/* styling the navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+nav a img {
+    width: 80px;
+    cursor: pointer;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #424242;
+}
+.logo-container h1{
+  display: inline-block;
+  margin-left: 18px;
+  letter-spacing: 6px;
+  font-size: 3rem;
+}
+#menuIcon{
+    width: 35px;
+    cursor: pointer;
+}
+#navbar-items{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+#navbar-items li {
+  display: inline-block;
+  margin:0 20px;
+}
+#navbar-items a {
+    font-size: 20px;
+    color: #424242;
+    text-decoration: none;
+}
 
-    <!-- navbar -->
-    <nav>
-        <a href="/" class="logo-container">
-            <img src="/assets/logo.png" alt="Avricus Logo" />
-            <h1>AVRICUS</h1>
-        </a>
-        <ul id="navbar-items">
-            <li><a href="#">Home</a></li>
-            <li><a href="#teamSection">Our Team</a></li>
-            <li><a href="#contactSection">Contact</a></li>
-        </ul>
-      <img id="menuIcon" src="./assets/menu.png" alt='menu'/>
-    </nav>
-    <ul class='navbar-mobile-items'>
-        <li><a href="#">Home</a></li>
-        <li><a href="#teamSection">Our Team</a></li>
-        <li><a href="#contactSection">Contact</a></li>           
-    </ul>
+#navbar-items li::after
+{
+    content:'';
+    display: block;
+    width:100%;
+    height:0.25rem;
+    margin-top:0.15rem;
+    border-radius:0.1875rem;
+    background:#424242;
+    transform: scaleX(0);
+    transition: 0.17s;
+}
+#navbar-items li:hover a{
+    transition: 0.17s;
+}
+#navbar-items li:hover:after{
+    transform: scaleX(1);
+}
+#menuIcon {
+    display: none;
+}
+.navbar-mobile-items {
+    display: none;
+    margin: 0;
+    list-style: none
+}
+.navbar-mobile-items li {
+    padding: 10px;
+}
+.navbar-mobile-items a {
+    text-decoration: none;
+    color: #424242;
+    font-size: 1.3rem;
+    transition: 0.2s;
+}
+.navbar-mobile-items a:hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
+/* styling the intro and about section */
+#introSection,#aboutSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 20px 150px 20px;
+    max-width:1500px;
+    margin: 0 auto;
+  }
 
-    <!-- Introduction Section -->
-    <section id='introSection'>
-        <div class="readSection faders">
-             <p>Avricus is bringing access to collaborative education for students across the country, thus revolutionising the Ed-Tech market in india.</p>
-          </div>
-        <div class="imgParent sliders from-right">
-            <img src="./assets/graphic1.png" alt="Graphic 1">
-         </div>
-    </section>
+.readSection {
+    max-width: 700px;
+}
+.readSection h1 {
+    font-size: 3rem;
+}
 
+/* styling the team and contact section */
+.imgParent img {
+    width: 550px;
+}
 
+#teamSection-Mainimage {
+    position: relative;
+    margin: 50px auto;
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+#teamSection > h2 {
+  text-align: center;
+}
+#team {
+    display: flex;
+    margin: 100px 0 0 0;
+    justify-content: space-around
+}
+.teamMember {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.teamMember p{
+    margin: 0;
+    color:#666
+}
+.teamMember h2{
+    margin:1.2rem 0 0.5rem 0;
+}
+.teamMember-image{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+#teamSection-Mainimage img,.teamMember-image img{
+    width: 100%;
+    height: auto;
+  }
+#teamSection,#contactSection {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#teamSection p,#contactSection p,#copyrightSection p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+} 
+.readSection p{
+    font-size: 1.8rem;
+}
+#copyrightSection{
+  padding:10px 0;
+  text-align: center;
+}
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
 
-    <!-- More about avricus -->
-    <section id="aboutSection">
-        <div class="imgParent sliders from-left">
-           <img src="./assets/graphic2.png" alt="Graphic 2">
-        </div>
-        <div class="readSection faders">
-            <h1>Why Avricus ?</h1>
-            <p>In a world torn by conflicts and differences in social, economic and political realms, Avricus is unlocking new ways of solving problems by opening doors to a brand-new world of potential solutions and perceptions.</p>
-        </div>
-    </section>
+/* code for responsiveness */
+@media screen and (max-width:900px) {
+    #team {
+        flex-direction: column;
+    }
+    #introSection,#aboutSection {
+        flex-direction: column;
+    }
+    .teamMember {
+        margin-top:80px;
+    }
+}
 
-
-
-    <!-- Our Team Section -->
-    <section id="teamSection">
-        <h1 class="section-heading faders">Our Team</h1>
-        <div id="teamSection-Mainimage" class="faders">
-            <img src="./assets/combined.PNG" alt="Shobhit and Yash Image">
-          </div>
-        <h2 class="faders">YASH GARG & SHOBHIT NIRWAN</h2>
-        <p class="faders">Currently running the top YouTube channels for K-12 students with more than 1 Million cumulative followers.Shobhit & Yash are currently IIIT and DTU undergrads with a vision to reach millions of students across India.</p>
-        <div id="team" class="faders">
-
-            <div class="teamMember">
-                <div class="teamMember-image">
-                    <img src="./assets/BhavyaImage.jpeg" alt="Bhavya Jain">
-                </div>
-                <h2>Bhavya Jain</h2>
-                <p>Creative Lead</p>
-            </div>
-
-            <div class="teamMember">
-                <div class="teamMember-image">
-                    <img src="./assets/NimitImage.jpeg" alt="Nimit Nirwan">
-                 </div>
-                <h2>Nimit Nirwan</h2>
-                <p>Production Head</p>
-            </div>
-
-            <div class="teamMember">
-                <div class="teamMember-image">
-                    <img src="./assets/SanchitImage.jpg" alt="Sanchit Garg">
-                </div>
-                <h2>Sanchit Garg</h2>
-                <p>Operations Manager</p>
-            </div> 
-
-        </div>
-    </section>
-
-
-
-    <!-- Contact Section -->
-    <section id='contactSection' class="faders">
-        <h1 class="section-heading" >Contact Us</h1>
-        <p><b>Email</b> - jobs@avricus.com</p>
-        <p><b>Address</b> -<br> Avricus Private Limited B-2400, Yamuna Vihar, Delhi - 110053, India</p>
-    </section>
-  
-    <!-- copyright section -->
-    <section id="copyrightSection" class="faders">
-       <p>Copyright &copy; 2021 Avricus Pvt. Ltd.</p>
-    </section>
-
-<script src="./app.js"></script>
-</body>
-</html>
+/* animation code */
+.faders.appear{
+    animation:upwardscroll 700ms linear forwards;
+}
+@keyframes upwardscroll{
+    0%{opacity: 0;transform:translateY(0px);}
+    50%{opacity: 0.5;transform: translateY(-20px);}
+    100%{opacity: 1;transform: translateY(0px);}
+ }
+.from-left{
+    opacity: 0;
+    transform:translateX(-100%);
+    transition:600ms linear;
+}
+.from-right{
+    opacity: 0;
+    transform: translateX(100%);
+    transition:600ms linear;
+}
+.from-left.slide,.from-right.slide{
+    opacity:1;
+    transform: translateX(0);
+}
+@media screen and (max-width:800px){
+    .imgParent img {
+        width: 300px;
+    }
+    .navbar-mobile-items {
+        height: 0;
+        overflow: hidden;
+        display: block;
+        transition: 0.3s;
+    }
+    #navbar-items {
+        display: none;
+    }
+    .navbar-mobile-items-clicked {
+        height: 148px;
+    }
+    #menuIcon {
+    display: block;
+    }
+}
