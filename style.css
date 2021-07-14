@@ -215,6 +215,11 @@ nav {
     margin-bottom: 5rem;
     text-align: center;
 }
+#contact-subsectionmap {
+    width:400px;
+    height:300px;
+    border:0;
+}
 
 /* code for responsiveness */
 @media screen and (max-width:900px) {
@@ -274,5 +279,18 @@ nav {
     }
     #menuIcon {
     display: block;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .logo-container h1 {
+        font-size: 2rem;
+    }
+    #menuIcon {
+       width: 25px;
+    }
+    #contact-subsectionmap {
+        width: 300px;
+        height: 250px;
     }
 }
